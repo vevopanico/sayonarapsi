@@ -243,7 +243,7 @@ p { line-height: 1.9; }
 .faq-trigger { font-size: 12px; line-height: 1.7; padding: 24px 0; gap: 20px; font-weight: 400; }
 .faq-trigger:hover { text-decoration: none; color: var(--primary); }
 .faq-answer { font-size: 11px; line-height: 1.9; max-width: 95%; padding-bottom: 24px; }
-.final-contact { background: var(--clay); color: var(--background); text-align: center; padding: 85px 6% 95px; }
+.final-contact { background: var(--primary); color: var(--background); text-align: center; padding: 85px 6% 95px; }
 .final-contact .eyebrow { justify-content: center; }
 .final-contact h2 { max-width: 650px; margin: 25px auto 20px; font-size: 54px; line-height: 1.1; }
 .final-contact p { font-size: 12px; margin-bottom: 29px; }
