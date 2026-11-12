@@ -304,7 +304,7 @@ p { line-height: 1.9; }
   .final-contact { padding: 67px 7%; } .final-contact h2 { font-size: 43px; } .final-contact p { font-size: 11px; }
   .site-footer { padding: 32px 7% 80px; } .footer-main { grid-template-columns: minmax(0,1fr); gap: 26px; }
   .footer-bottom { flex-direction: column; gap: 10px; line-height: 1.7; }
-  .floating-contact { right: 15px; bottom: 15px; padding: 0; }
+  .floating-contact { display: none; }
 }
 @media(min-width: 430px) and (max-width: 767px) { .hero-photo { height: 370px; } .hero h1 { max-width: 410px; font-size: 48px; } }
 @media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .reveal-wait { opacity: 1; transform: none; } }
