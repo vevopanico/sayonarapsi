@@ -104,7 +104,7 @@ function Index() {
           <div className="hero-photo-blend" />
           <div className="hero-inner"><div className="hero-copy">
             <span className="eyebrow">Um olhar para dentro. Um novo encontro.</span>
-            <h1 id="hero-title">Psicologia para<br />mulheres que querem<br /><em>se reencontrar.</em></h1>
+            <h1 id="hero-title">Psicologia para <br />mulheres que querem <br /><em>se reencontrar.</em></h1>
             <p className="hero-description">Um espaço de acolhimento e autoconhecimento para mulheres que desejam compreender sua história, reconhecer sua identidade e construir novos caminhos.</p>
             <p className="brand-pillars">Identidade • Propósito • Maturidade emocional</p>
             <div className="hero-actions"><Appointment /><Button variant="editorial" asChild><a href="#sobre">Conheça meu trabalho <ArrowDown /></a></Button></div>

@@ -162,7 +162,8 @@
   --hero-surface: oklch(0.886 0.018 78);
   --line-light: oklch(0.948 0.013 80 / 30%);
   --shadow-soft: 0 8px 26px oklch(0.3 0.025 55 / 12%);
-  --hero-blend: linear-gradient(90deg, var(--hero-surface), transparent 42%);
+  --hero-blend: linear-gradient(90deg, var(--background) 0%, color-mix(in oklch, var(--background) 94%, transparent) 22%, color-mix(in oklch, var(--background) 72%, transparent) 40%, transparent 68%);
+  --hero-mobile-blend: linear-gradient(180deg, transparent 0%, transparent 25%, color-mix(in oklch, var(--background) 12%, transparent) 36%, color-mix(in oklch, var(--background) 78%, transparent) 57%, var(--background) 73%, var(--background) 100%);
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
@@ -189,16 +190,16 @@ p { line-height: 1.9; }
 .header-cta { min-height: 41px; padding: 12px 18px; }
 .mobile-menu-toggle { display: none; }
 .mobile-nav { position: absolute; top: 76px; left: 0; right: 0; background: var(--background); border-bottom: 1px solid var(--border); padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-soft); }
-.hero { position: relative; background: var(--hero-surface); min-height: 640px; overflow: hidden; }
-.hero-photo { position: absolute; right: 0; top: 0; width: 60%; height: 100%; object-fit: cover; object-position: 65% 56%; animation: appear 1.1s ease both; }
-.hero-photo-blend { position: absolute; inset: 0 0 0 40%; background: var(--hero-blend); pointer-events: none; }
-.hero-inner { position: relative; max-width: 1440px; margin: auto; padding: 90px 6% 70px; min-height: 640px; display: flex; align-items: center; }
+.hero { position: relative; background: var(--background); min-height: 680px; overflow: hidden; }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; animation: appear 1.2s ease both; }
+.hero-photo-blend { position: absolute; inset: 0; background: var(--hero-blend); pointer-events: none; }
+.hero-inner { position: relative; max-width: 1440px; margin: auto; padding: 96px 6% 80px; min-height: 680px; display: flex; align-items: center; }
 .hero-copy { width: 48%; max-width: 565px; }
 .eyebrow { display: flex; align-items: center; gap: 12px; text-transform: uppercase; font-size: 9px; font-weight: 500; letter-spacing: 2px; line-height: 1.6; }
 .eyebrow::before { content: ''; width: 25px; height: 1px; background: currentColor; flex-shrink: 0; }
-.hero h1 { font-size: 64px; line-height: 1.04; margin: 23px 0; animation: appear 1s .15s ease both; }
+.hero h1 { font-size: 64px; line-height: 1.04; margin: 26px 0; animation: appear 1.2s .25s ease both; }
 .hero h1 em, h2 em { font-weight: 400; }
-.hero-description { max-width: 380px; font-size: 12px; animation: appear 1s .3s ease both; }
+.hero-description { max-width: 380px; font-size: 12px; animation: appear 1.2s .4s ease both; }
 .brand-pillars { font-size: 9px; letter-spacing: 1px; margin-top: 25px; animation: appear 1s .4s ease both; }
 .hero-actions { margin-top: 31px; display: flex; gap: 24px; align-items: center; animation: appear 1s .5s ease both; }
 .professional { font-size: 9px; margin-top: 22px; opacity: .8; }
@@ -262,22 +263,24 @@ p { line-height: 1.9; }
 @keyframes accordion-up { from { height: var(--radix-accordion-content-height); } to { height: 0; } }
 @theme { --animate-accordion-down: accordion-down .3s ease; --animate-accordion-up: accordion-up .3s ease; }
 @media(min-width: 1600px) { .hero, .hero-inner { min-height: 730px; } .hero h1 { font-size: 72px; } }
-@media(max-width: 1100px) { .desktop-nav { gap: 22px; } .hero h1 { font-size: 55px; } .hero-photo { width: 61%; } .editorial-grid, .faq-grid { gap: 60px; } .section h2 { font-size: 45px; } .hero-actions { gap: 18px; flex-wrap: wrap; } }
+@media(max-width: 1100px) { .desktop-nav { gap: 22px; } .hero h1 { font-size: 55px; } .editorial-grid, .faq-grid { gap: 60px; } .section h2 { font-size: 45px; } .hero-actions { gap: 18px; flex-wrap: wrap; } }
 @media(max-width: 767px) {
   html { scroll-padding-top: 24px; }
   .site-header { height: 76px; padding: 0 6%; gap: 14px; }
   .wordmark span { font-size: 30px; } .wordmark small { font-size: 7px; letter-spacing: 2.7px; margin-top: 6px; }
   .desktop-nav { display: none; } .mobile-menu-toggle { display: inline-flex; }
-  .hero { display: flex; flex-direction: column; min-height: 0; }
-  .hero-photo { position: relative; width: 100%; height: 330px; object-position: 65% 44%; }
-  .hero-photo-blend, .hero-bottom { display: none; }
-  .hero-inner { min-height: 0; padding: 33px 7% 40px; width: 100%; }
+  .hero { min-height: 0; }
+  .hero-photo { position: absolute; width: 100%; height: 510px; object-position: 76% 22%; }
+  .hero-photo-blend { display: block; background: var(--hero-mobile-blend); }
+  .hero-bottom { display: none; }
+  .hero-inner { min-height: 0; padding: 290px 7% 38px; width: 100%; }
   .hero-copy { width: 100%; max-width: none; }
   .eyebrow { font-size: 8px; letter-spacing: 1.5px; }
-  .hero h1 { font-size: 44px; line-height: 1.02; margin: 19px 0; max-width: 360px; }
+  .hero h1 { font-size: 42px; line-height: 1.04; margin: 16px 0 20px; max-width: 360px; }
+  .hero h1 br { display: none; }
   .hero-description { font-size: 11px; max-width: 360px; }
   .brand-pillars { font-size: 8px; letter-spacing: .7px; margin-top: 19px; }
-  .hero-actions { margin-top: 25px; gap: 22px; }
+  .hero-actions { margin-top: 25px; gap: 18px; }
   .appointment-button { font-size: 10px; padding: 14px 18px; min-height: 48px; }
   .hero-actions .editorial-button { font-size: 10px; }
   .professional { margin-top: 18px; font-size: 8px; }
@@ -306,5 +309,5 @@ p { line-height: 1.9; }
   .footer-bottom { flex-direction: column; gap: 10px; line-height: 1.7; }
   .floating-contact { display: none; }
 }
-@media(min-width: 430px) and (max-width: 767px) { .hero-photo { height: 370px; } .hero h1 { max-width: 410px; font-size: 48px; } }
+@media(min-width: 430px) and (max-width: 767px) { .hero-photo { height: 550px; } .hero-inner { padding-top: 320px; } .hero h1 { max-width: 410px; font-size: 46px; } }
 @media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .reveal-wait { opacity: 1; transform: none; } }
