@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Website architecture
+- Keep this explicitly long-scrolling personal-brand site in the index route with in-page section navigation; the brief defines one continuous Instagram-bio experience.
+- Use semantic visual styles in the global stylesheet and shared Button variants; this keeps the editorial design consistent across controls and screen sizes.
+- Serve supplied photographs through optimized WebP asset pointers and keep below-fold media lazy-loaded; this reduces mobile loading costs without replacing the subject.
